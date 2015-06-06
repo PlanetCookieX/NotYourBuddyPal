@@ -16,6 +16,9 @@ def run_bot():
         print("Testing Comment " +comment.id)
 
         comment_text = comment.body.lower()
+        
+        if comment.author.name.lower() is 'BotName':
+            continue
 
         isBuddy = False
         isPal = False
