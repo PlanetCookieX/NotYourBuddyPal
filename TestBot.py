@@ -10,11 +10,8 @@ cache = []
 
 
 def run_bot():
-    print("Running Bot...")
-    subreddit = r.get_subreddit("test")
-    comments = subreddit.get_comments(limit=100)
-    print("Fetching Comments...")
-    for comment in comments:
+    stream = praw.helpers.comment_stream(r, 'all')
+    for comment in stream:
 
         print("Testing Comment " +comment.id)
 
